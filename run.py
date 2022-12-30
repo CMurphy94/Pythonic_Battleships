@@ -6,7 +6,7 @@ NUM_OF_SHIPS = 4
 def board_setup():
     board = []
     for i in range(BOARD_SIZE):
-        row = ["0"] * 5
+        row = ["0"] * BOARD_SIZE
         board.append(row)
 
 
