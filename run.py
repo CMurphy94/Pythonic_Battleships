@@ -11,6 +11,9 @@ def board_setup():
     for i in range(BOARD_SIZE):
         row = ["0"] * BOARD_SIZE
         board.append(row)
+    
+    player_board = [['-' for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
+    comp_board = [['-' for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
 
 
 
@@ -45,3 +48,21 @@ def gameplay():
     while True:
         x = int(input("Enter the column you'd like to guess: "))
         y = int(input("Enter the row you'd like to guess: "))
+
+        if (x,y) in comp_ships:
+            print("You Hit! Nice Job!")
+            comp_board[x][y] = "X"
+            comp_ships.remove((x, y))
+
+        else:
+            print("You missed!")
+            comp_board[x][y] = "O"
+
+
+def main():
+    board_setup()
+    player_ships_setup()
+    computer_ships_setup()
+    gameplay()
+
+main()
