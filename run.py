@@ -4,6 +4,8 @@ BOARD_SIZE = 5
 NUM_OF_SHIPS = 4
 
 def board_setup():
+    global player_board
+    global comp_board
     """
     Sets up to board size
     """
@@ -46,6 +48,14 @@ def gameplay():
     Runs the game
     """
     while True:
+        print("Your board and ships: ")
+        for row in player_board:
+            print(" ".join(row))
+        
+        print("Computers board: ")
+        for row in comp_board:
+            print(" ".join(row))
+
         x = int(input("Enter the column you'd like to guess: "))
         y = int(input("Enter the row you'd like to guess: "))
 
