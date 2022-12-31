@@ -25,10 +25,11 @@ def player_ships_setup():
     """
     player_ships = []
     for i in range(NUM_OF_SHIPS):
-        ship_row = random.randint(0, BOARD_SIZE-1)
-        ship_col = random.randint(0, BOARD_SIZE-1)
-        player_ships.append((ship_row, ship_col))
-    print(f" player ships are located at the following locations: {player_ships}")
+        player_ship_row = random.randint(0, BOARD_SIZE-1)
+        player_ship_col = random.randint(0, BOARD_SIZE-1)
+        player_ships.append((player_ship_row, player_ship_col))
+        player_board[player_ship_row][player_ship_col] = "S"
+    print(f"Player ships are located at the following locations: {player_ships}")
 
 
 
@@ -38,9 +39,9 @@ def computer_ships_setup():
     """
     comp_ships = []
     for i in range(NUM_OF_SHIPS):
-        ship_row = random.randint(0, BOARD_SIZE-1)
-        ship_col = random.randint(0, BOARD_SIZE-1)
-        comp_ships.append((ship_row, ship_col))
+        comp_ship_row = random.randint(0, BOARD_SIZE-1)
+        comp_ship_col = random.randint(0, BOARD_SIZE-1)
+        comp_ships.append((comp_ship_row, comp_ship_col))
 
 
 def gameplay():
