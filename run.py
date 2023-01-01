@@ -30,6 +30,7 @@ def player_ships_setup():
         player_ships.append((player_ship_row, player_ship_col))
         player_board[player_ship_row][player_ship_col] = "S"
     print(f"Player ships are located at the following locations: {player_ships}")
+    print()
 
 
 
@@ -37,6 +38,7 @@ def computer_ships_setup():
     """
     Sets up the computers ship locations
     """
+    global comp_ships
     comp_ships = []
     for i in range(NUM_OF_SHIPS):
         comp_ship_row = random.randint(0, BOARD_SIZE-1)
@@ -56,6 +58,8 @@ def gameplay():
         print("Computers board: ")
         for row in comp_board:
             print(" ".join(row))
+        
+        print()
 
         x = int(input("Enter the column you'd like to guess: "))
         y = int(input("Enter the row you'd like to guess: "))
@@ -68,6 +72,10 @@ def gameplay():
         else:
             print("You missed!")
             comp_board[x][y] = "O"
+
+        if not comp_ships:
+            print("You sank all the enemy ships! Nice job on winning!")
+            break
 
 
 def main():
