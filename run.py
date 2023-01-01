@@ -77,6 +77,12 @@ def gameplay():
             print("You sank all the enemy ships! Nice job on winning!")
             break
 
+        x = random.randint(0, BOARD_SIZE-1)
+        y = random.randint(0, BOARD_SIZE-1)
+        print()
+        print(f"The computer is guessing that you have a ship at {x}, {y}")
+        print()
+
 
 def main():
     board_setup()
