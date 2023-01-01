@@ -23,6 +23,7 @@ def player_ships_setup():
     """
     Sets up the players ship locations
     """
+    global player_ships
     player_ships = []
     for i in range(NUM_OF_SHIPS):
         player_ship_row = random.randint(0, BOARD_SIZE-1)
@@ -81,7 +82,16 @@ def gameplay():
         y = random.randint(0, BOARD_SIZE-1)
         print()
         print(f"The computer is guessing that you have a ship at {x}, {y}")
-        print()
+
+        if (x, y) in player_ships:
+            print("You got Hit!")
+            print()
+            player_board[x][y] = "X"
+            player_ships.remove((x, y))
+        else:
+            print("The computer Missed!")
+            print()
+            player_board[x][y] = "O"
 
 
 def main():
