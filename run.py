@@ -79,8 +79,8 @@ def gameplay():
             if (x, y) in guessed_locations:
                 raise ValueError("You have already guessed this location. Please guess somewhere new, the ships don't move.")
 
-        except ValueError as e:
-            print(e)
+        except ValueError:
+            print("You need to input a number. For example 1 instead of One.")
             continue
 
         guessed_locations.append((x, y))
