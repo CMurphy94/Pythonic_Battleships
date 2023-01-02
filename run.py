@@ -106,6 +106,10 @@ def gameplay():
             print()
             player_board[x][y] = "O"
 
+        if not player_ships:
+            print("All of your ships have been sunk! Game over!")
+            break
+
 
 def main():
     board_setup()
