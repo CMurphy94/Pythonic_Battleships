@@ -71,8 +71,19 @@ def gameplay():
         
         print()
 
-        x = int(input("Enter the column you'd like to guess: "))
-        y = int(input("Enter the row you'd like to guess: "))
+        try:
+            x = int(input("Enter the column you'd like to guess: "))
+            y = int(input("Enter the row you'd like to guess: "))
+            if not (0 <= x < BOARD_SIZE) or not (0 <= y < BOARD_SIZE):
+                raise ValueError("You need to enter a number that will be within the size of the board (0 - 4).")
+            if (x, y) in guessed_locations:
+                raise ValueError("You have already guessed this location. Please guess somewhere new, the ships don't move.")
+
+        except ValueError as e:
+            print(e)
+            continue
+
+        guessed_locations.append((x, y))
 
         if (x,y) in comp_ships:
             print("You Hit! Nice Job!")
