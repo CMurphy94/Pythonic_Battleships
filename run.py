@@ -72,15 +72,27 @@ def gameplay():
         print()
 
         try:
-            x = int(input("Enter the column you'd like to guess: "))
-            y = int(input("Enter the row you'd like to guess: "))
+            x = input("Enter the column you'd like to guess: ")
+            if not x.isdigit():
+                raise ValueError("You need to input a number. For example 1 instead of One.")
+            x = int(x)
+
+            y = input("Enter the row you'd like to guess: ")
+            if not y.isdigit():
+                raise ValueError("You need to input a number. For example 1 instead of One.")
+            y = int(y)
+
             if not (0 <= x < BOARD_SIZE) or not (0 <= y < BOARD_SIZE):
                 raise ValueError("You need to enter a number that will be within the size of the board (0 - 4).")
             if (x, y) in guessed_locations:
                 raise ValueError("You have already guessed this location. Please guess somewhere new, the ships don't move.")
 
-        except ValueError:
-            print("You need to input a number. For example 1 instead of One.")
+        except ValueError as e:
+            print(e)
+            continue
+
+        except TypeError:
+            print("You need input the number itself. For example 1 instead of One.")
             continue
 
         guessed_locations.append((x, y))
