@@ -51,6 +51,7 @@ def gameplay():
     """
     Runs the game
     """
+    guessed_locations = []
     while True:
         print("Your board and ships: ")
         for row in player_board:
@@ -80,8 +81,12 @@ def gameplay():
 
         x = random.randint(0, BOARD_SIZE-1)
         y = random.randint(0, BOARD_SIZE-1)
+        while (x, y) in guessed_locations:
+            x = random.randint(0, BOARD_SIZE-1)
+            y = random.randint(0, BOARD_SIZE-1)
         print()
         print(f"The computer is guessing that you have a ship at {x}, {y}")
+        guessed_locations.append((x, y))
 
         if (x, y) in player_ships:
             print("You got Hit!")
