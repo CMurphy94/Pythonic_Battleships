@@ -23,3 +23,28 @@ board. This will also be updated to show the player where the computer has guess
 - Accepts the location of wherever the user wants to guess.
 - Validation prevents the computer from guessing the same location twice.
 - Validation also prevents the user from inputting anything other than a valid integer or from guessing the same location twice.
+
+## Testing
+
+- Through testing as well as trial and error I was able to rid some bugs within my code that I was not imediately aware of.
+When writing code to ensure the same location could not be selected twice it caused the player not to be able to select a 
+location that the computer had guessed and vice versa. I was able to resolve this by seperating the players guesses from 
+the computers guesses.
+- Passed code through the PEP8 linter with no issues.
+- Given invalid inputs, user is informed of why input is invalid and prompted to provide a valid input.
+
+## Deployment
+
+This project was deployed to Heroku.
+- Steps for deployment.
+  - Create a new Heroku app.
+  - Set the buildbacks to Python and NodeJS in that order.
+  - Link the Heroku app to the repository.
+  - Click on Deploy
+
+## Credits
+
+When I ran into issues in figuring out exactly I need to code what I wanted to there was a number or resources I used to help me.
+- When creating my function that would place the ships I learned about "set()" from [GeeksforGeeks](https://www.geeksforgeeks.org/python-set-method/)
+- When researching different methods about how I could maintain the value inputted by the user was an integer I came across this article on W3Schools refreshed me on ways you can check if a value is a string or integer for example. [W3Schools](https://www.w3schools.com/python/ref_string_isdigit.asp)
+- [CodeInstitute](https://codeinstitute.net/ie/) for the tutorial on how to deploy my project.
