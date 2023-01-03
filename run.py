@@ -13,7 +13,7 @@ def board_setup():
     for i in range(BOARD_SIZE):
         row = ["0"] * BOARD_SIZE
         board.append(row)
-    
+
     player_board = [['-' for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
     comp_board = [['-' for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
 
@@ -122,7 +122,7 @@ def gameplay():
             continue
 
 
-        if (x,y) in comp_ships:
+        if (x, y) in comp_ships:
             print()
             print("You Hit! Nice Job!")
             comp_board[x][y] = "X"

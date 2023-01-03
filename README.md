@@ -1,31 +1,25 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Pythonic Battleships!
 
-Welcome CMurphy94,
+Pythonic Battleships is a simple easy to play Battleships game that is built within Python.
+That game is set up on a 5x5 battlefield grid with both player and computer having 4 Battleships randomly deployed to the field.
+The players goal is to find the location of and sink the computers Battleships, before the computer guesses the players.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+## How to Play
 
-## Reminders
+As stated above the goal of this game is to sink the opponents Battleships. When the game starts you will be presented with two
+grids. Titled the players board and computers board accordingly. You will notice a difference in these two boards in that
+the player board will have four "S" numbers placed in random locations. This indentifies the location of the players ships.
+Don't worry though the computer does not know the location of these. The player will then be asked to guess a row and column, if
+they get it correct that section of the board will update to an "X" to indicate a hit and the player will be informed they've
+sank a battleship. If the player misses they will also be informed of said miss, however the location guessed will update to a
+"O" instead of a "X" to indicate the miss. Once the player makes a guess the computer will then make a guess back at the players
+board. This will also be updated to show the player where the computer has guessed.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## Features
 
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+- Random ship generation and placement.
+  - Four ships will always be placed for both the player and computer. No one space can occupy two ships.
+- Play against the computer which makes guesses back against the player.
+- Accepts the location of wherever the user wants to guess.
+- Validation prevents the computer from guessing the same location twice.
+- Validation also prevents the user from inputting anything other than a valid integer or from guessing the same location twice.
