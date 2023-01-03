@@ -4,6 +4,10 @@ Pythonic Battleships is a simple easy to play Battleships game that is built wit
 That game is set up on a 5x5 battlefield grid with both player and computer having 4 Battleships randomly deployed to the field.
 The players goal is to find the location of and sink the computers Battleships, before the computer guesses the players.
 
+[Here is a live version of my project](https://pythonic-battleships.herokuapp.com/)
+
+![programview](./assets/images/pythonicbattleships.png)
+
 ## How to Play
 
 As stated above the goal of this game is to sink the opponents Battleships. When the game starts you will be presented with two
