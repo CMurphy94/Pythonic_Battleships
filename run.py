@@ -34,6 +34,11 @@ def player_ships_setup():
     player_ships = list(ship_locations)
     for (x, y) in player_ships:
         player_board[x][y] = "S"
+    print("--------------------------------")
+    print("Welcome to Pythonic Battleships.")
+    print("Sink before you're sank!")
+    print("--------------------------------")
+    print()
     print(f"Player ships are located at the following locations: {player_ships}")
     print()
 
@@ -54,11 +59,30 @@ def computer_ships_setup():
     comp_ships = list(ship_locations)
 
 
+
+def computer_guess():
+    """
+    Ensures computer guesses a new location every round
+    """
+    global guessed_locations
+    while True:
+        comp_x = random.randint(0, BOARD_SIZE-1)
+        comp_y = random.randint(0, BOARD_SIZE-1)
+        if (comp_x, comp_y) not in guessed_locations:
+            guessed_locations.append((comp_x, comp_y))
+            break
+    return comp_x, comp_y
+        
+
+
+
 def gameplay():
     """
     Runs the game
     """
+    global guessed_locations
     guessed_locations = []
+    player_guessed_locations = []
     while True:
         print("Your board and ships: ")
         for row in player_board:
@@ -84,8 +108,10 @@ def gameplay():
 
             if not (0 <= x < BOARD_SIZE) or not (0 <= y < BOARD_SIZE):
                 raise ValueError("You need to enter a number that will be within the size of the board (0 - 4).")
-            if (x, y) in guessed_locations:
+            if (x, y) in player_guessed_locations:
                 raise ValueError("You have already guessed this location. Please guess somewhere new, the ships don't move.")
+
+            player_guessed_locations.append((x, y))
 
         except ValueError as e:
             print(e)
@@ -95,19 +121,23 @@ def gameplay():
             print("You need input the number itself. For example 1 instead of One.")
             continue
 
-        guessed_locations.append((x, y))
 
         if (x,y) in comp_ships:
+            print()
             print("You Hit! Nice Job!")
             comp_board[x][y] = "X"
             comp_ships.remove((x, y))
 
+
         else:
+            print()
             print("You missed!")
             comp_board[x][y] = "O"
 
         if not comp_ships:
+            print("--------------------------------------------------")
             print("You sank all the enemy ships! Nice job on winning!")
+            print("--------------------------------------------------")
             break
 
         x = random.randint(0, BOARD_SIZE-1)
@@ -120,17 +150,21 @@ def gameplay():
         guessed_locations.append((x, y))
 
         if (x, y) in player_ships:
+            print()
             print("You got Hit!")
             print()
             player_board[x][y] = "X"
             player_ships.remove((x, y))
         else:
+            print()
             print("The computer Missed!")
             print()
             player_board[x][y] = "O"
 
         if not player_ships:
+            print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
             print("All of your ships have been sunk! Game over!")
+            print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
             break
 
 
