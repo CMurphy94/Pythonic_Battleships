@@ -20,6 +20,7 @@ def board_setup():
     comp_board = [['-' for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
 
 
+
 def player_ships_setup():
     """
     Sets up the players ship locations
@@ -162,6 +163,9 @@ def gameplay():
 
 
 def main():
+    """
+    Compiles the required functions into one that can be called to run the program
+    """
     board_setup()
     player_ships_setup()
     computer_ships_setup()
