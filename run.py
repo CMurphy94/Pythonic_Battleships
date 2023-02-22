@@ -117,15 +117,11 @@ def gameplay():
         except TypeError:
             print("You need input the number itself. For example 1 instead of One.")
             continue
-
-
         if (x, y) in comp_ships:
             print()
             print("You Hit! Nice Job!")
             comp_board[x][y] = "X"
             comp_ships.remove((x, y))
-
-
         else:
             print()
             print("You missed!")
@@ -170,5 +166,6 @@ def main():
     player_ships_setup()
     computer_ships_setup()
     gameplay()
+
 
 main()
