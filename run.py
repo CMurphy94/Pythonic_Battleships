@@ -10,7 +10,7 @@ def board_setup():
     """
     global player_board
     global comp_board
-    
+
     board = []
     for i in range(BOARD_SIZE):
         row = ["0"] * BOARD_SIZE
@@ -55,7 +55,7 @@ def computer_ships_setup():
         comp_ship_row = random.randint(0, BOARD_SIZE-1)
         comp_ship_col = random.randint(0, BOARD_SIZE-1)
         ship_locations.add((comp_ship_row, comp_ship_col))
-    
+
     comp_ships = list(ship_locations)
 
 
@@ -71,7 +71,7 @@ def computer_guess():
             guessed_locations.append((comp_x, comp_y))
             break
     return comp_x, comp_y
-        
+
 
 def gameplay():
     """
@@ -84,12 +84,12 @@ def gameplay():
         print("Your board and ships: ")
         for row in player_board:
             print(" ".join(row))
-        
+
         print()
         print("Computers board: ")
         for row in comp_board:
             print(" ".join(row))
-        
+
         print()
 
         try:
