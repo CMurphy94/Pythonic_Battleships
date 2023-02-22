@@ -3,12 +3,14 @@ import random
 BOARD_SIZE = 5
 NUM_OF_SHIPS = 4
 
+
 def board_setup():
-    global player_board
-    global comp_board
     """
     Sets up to board size
     """
+    global player_board
+    global comp_board
+    
     board = []
     for i in range(BOARD_SIZE):
         row = ["0"] * BOARD_SIZE
@@ -16,7 +18,6 @@ def board_setup():
 
     player_board = [['-' for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
     comp_board = [['-' for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
-
 
 
 def player_ships_setup():
@@ -43,7 +44,6 @@ def player_ships_setup():
     print()
 
 
-
 def computer_ships_setup():
     """
     Sets up the computers ship locations
@@ -59,7 +59,6 @@ def computer_ships_setup():
     comp_ships = list(ship_locations)
 
 
-
 def computer_guess():
     """
     Ensures computer guesses a new location every round
@@ -73,8 +72,6 @@ def computer_guess():
             break
     return comp_x, comp_y
         
-
-
 
 def gameplay():
     """
@@ -96,12 +93,12 @@ def gameplay():
         print()
 
         try:
-            x = input("Enter the column you'd like to guess: ")
+            x = input("Enter the row you'd like to guess: ")
             if not x.isdigit():
                 raise ValueError("You need to input a number. For example 1 instead of One.")
             x = int(x)
 
-            y = input("Enter the row you'd like to guess: ")
+            y = input("Enter the column you'd like to guess: ")
             if not y.isdigit():
                 raise ValueError("You need to input a number. For example 1 instead of One.")
             y = int(y)
