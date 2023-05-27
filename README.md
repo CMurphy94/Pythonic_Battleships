@@ -43,10 +43,20 @@ For a game like this there is a large number of features available that can be i
 
 - Random ship generation and placement.
   - Four ships will always be placed for both the player and computer. No one space can occupy two ships.
+  ![playershiplocation](/assets/images/player-ship-location.PNG)
+
 - Play against the computer which makes guesses back against the player.
+
 - Accepts the location of wherever the user wants to guess.
+  ![guesses](/assets/images/guesses.PNG)
+
 - Validation prevents the computer from guessing the same location twice.
+  ![sameguess](/assets/images/sameguess.PNG)
+
 - Validation also prevents the user from inputting anything other than a valid integer or from guessing the same location twice.
+  ![invalidguessone](/assets/images/invalidone.PNG)
+  ![invalidguesssize](/assets/images/invalidguesssize.PNG)
+
 
 ### Future Features
 
