@@ -37,7 +37,7 @@ board. This will also be updated to show the player where the computer has guess
 
 ## Features
 
-...
+For a game like this there is a large number of features available that can be implemented. What I have done with this code is add features to make it a fun and functional game to play, however there are still some features I would like to implement in future.
 
 ### Current Features
 
