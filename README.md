@@ -8,6 +8,20 @@ The players goal is to find the location of and sink the computers Battleships, 
 
 ![programview](./assets/images/pythonicbattleships.png)
 
+----
+##Contents
+1. [How To Play](#How-To-Play "Goto Howto")
+
+2. [Features](#Features "Goto Features")
+  * [Current Features](#Current-Features "Goto Current Features")
+  * [Future Features](#Future-Features "Goto Future Features")
+
+3. [Testing](#Testing "Goto Testing")
+
+4. [Deployment](#Deployment "Goto Deployment")
+
+5. [Credits](#Credits "Goto Credits")
+
 ## How to Play
 
 As stated above the goal of this game is to sink the opponents Battleships. When the game starts you will be presented with two
@@ -19,7 +33,13 @@ sank a battleship. If the player misses they will also be informed of said miss,
 "O" instead of a "X" to indicate the miss. Once the player makes a guess the computer will then make a guess back at the players
 board. This will also be updated to show the player where the computer has guessed.
 
+-----
+
 ## Features
+
+...
+
+### Current Features
 
 - Random ship generation and placement.
   - Four ships will always be placed for both the player and computer. No one space can occupy two ships.
@@ -27,6 +47,12 @@ board. This will also be updated to show the player where the computer has guess
 - Accepts the location of wherever the user wants to guess.
 - Validation prevents the computer from guessing the same location twice.
 - Validation also prevents the user from inputting anything other than a valid integer or from guessing the same location twice.
+
+### Future Features
+
+...
+
+----
 
 ## Testing
 
@@ -37,6 +63,8 @@ the computers guesses.
 - Passed code through the PEP8 linter with no issues.
 - Given invalid inputs, user is informed of why input is invalid and prompted to provide a valid input.
 
+----
+
 ## Deployment
 
 This project was deployed to Heroku.
@@ -44,7 +72,9 @@ This project was deployed to Heroku.
   - Create a new Heroku app.
   - Set the buildbacks to Python and NodeJS in that order.
   - Link the Heroku app to the repository.
-  - Click on Deploy
+  - Click on Deploy.
+
+  ----
 
 ## Credits
 
