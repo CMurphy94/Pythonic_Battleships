@@ -61,7 +61,7 @@ For a game like this there is a large number of features available that can be i
 
 ### Future Features
 
-...
+Among the features I have already implemented there are two in particular that I would like to implement in future. The first feature I would like to implement in future is one in which the player before beggining the game can select the size of the board, size of the ships and number of ships to be played with. The second feature I would like to implement in future is one in which the user can also select the location they would like to place their own ships at.
 
 ----
 
