@@ -54,6 +54,7 @@ For a game like this there is a large number of features available that can be i
   ![sameguess](/assets/images/sameguess.PNG)
 
 - Validation also prevents the user from inputting anything other than a valid integer or from guessing the same location twice.
+
   ![invalidguessone](/assets/images/invalidone.PNG)
   ![invalidguesssize](/assets/images/invalidguesssize.PNG)
 
